@@ -1,0 +1,92 @@
+extends Node
+
+
+# Markus pilv
+# yl2
+
+var random = RandomNumberGenerator.new()
+
+func tooooo(tunnid, tunnitasu):
+	var tasu = 0
+	if tunnid >= 40:
+		tasu=tunnid*tunnitasu
+	else:
+		tasu=40*tunnitasu+(tunnid-40)*1.5*tunnid
+		
+	print(round(tasu))
+	
+	# Called when the node enters the scene tree for the first time.
+func _ready():
+	
+	print("\n________ul2__________")
+	var raha = 20
+	var sai = 10
+	var leib = 30
+	
+	if raha > sai:
+		print ("saad osta saia")
+	else:
+		print("ei saa osta saia")
+	
+	if raha > leib:
+		print ("saad osta leiba")
+	else:
+		print("ei saa osta leiba")
+
+	var kylg_ = 10
+	var kylg__ = 10
+	
+	if kylg_ == kylg__:
+		print("ruut")
+	else:
+		print("ristkylik")
+		
+		
+	print("\n________ul3__________")
+	
+	var vaen_elud = 100
+	var sinu_elud = 100
+	
+	
+	while vaen_elud > 0:
+		var random_numba2 = random.randi_range(8, 15)
+		var random_numba = random.randi_range(8, 150)
+		random.randomize()
+		vaen_elud-=random_numba
+		sinu_elud-=random_numba2
+		print("vaen elud: ",vaen_elud," mõõga hit: ", random_numba)
+		if vaen_elud <= 0:
+			print("vaenlane k2rbas ära")
+		else:
+			print("sinu elud: ",sinu_elud," mõõga hit: ", random_numba2)
+			if sinu_elud <= 0:
+				print("mdea skill issue")
+	
+	print("\n________ul4__________")
+	 
+	var nimed = ["Feake","Bradwell","Dreger","Bloggett","Lambole","Daish","Lippiett","Blackie","Stollenbeck","Houseago","Dugall","Sprowson","Kitley","Mcenamin","Allchin","Doghartie","Brierly","Pirrone","Fairnie","Seal","Scoffins","Galer","Matevosian","DeBlase","Cubbin","Izzett","Ebi","Clohisey","Prater","Probart","Samwaye","Concannon","MacLure","Eliet","Kundt","Reyes"]
+	print("nimesid on: ",nimed.size())
+	print("esimene nimi on: ", nimed[0])
+	nimed.sort()
+	nimed.erase("Reyes")
+	nimed.append("Markus")
+	var piknimi = 0
+	var piknim = ""
+	print(len(nimed))
+	for x in range(nimed.size()):
+		if piknimi<len(nimed[x]):
+			piknimi=len(nimed[x])
+			piknim = nimed[x]
+		print(nimed[x])
+	print("pikim nimi on: ", piknim)
+	
+	print("\n________ul4.2__________")
+	
+	var player = {"nimi":"pedepoiss123", "posx":20, "posy":20,"health":100, "items":["puit","axe"],"gold":1}
+	for i in range(1,6):
+		player.gold+=i
+	print("kulda on pärast 5X KULLA HÄKKI: ",player.gold)
+	
+	print("\n________ul5__________")
+	
+	tooooo(41,10)
